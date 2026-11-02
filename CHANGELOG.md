@@ -1,3 +1,344 @@
+## v0.4.9 — 2026-11-02
+
+### Core updates
+
+- xray-core: `v26.3.27` → `v26.10.31`
+- sing-box: `v1.14.3` → `v1.14.4`
+
+### Changes
+
+- [`ec37307`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ec37307) fix(backend): tear down a data path whose core died
+- [`5a53c45`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5a53c45) fix(frontend): wrap setting row control under title when it does not fit
+- [`e256b8a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e256b8a) docs(desktop): distinguish pkexec and sudo authorization
+- [`1acf7f2`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1acf7f2) fix(desktop): discover installed capped helpers for AppImage
+- [`8409992`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8409992) fix(core): reject service-only loopback observation targets
+- [`54f6bdf`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/54f6bdf) fix(core): omit inert provider burst ping labels with a warning
+- [`f7c2580`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f7c2580) fix(core): reject non-canonical hyphen regexes and mixed service loopback candidates
+- [`1d2ada0`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1d2ada0) fix(core): enforce Go-compatible regex AST grammar and permit loopback balancer members
+- [`a4cfcac`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a4cfcac) feat(core): support leastLoad balancer strategy costs
+- [`9fb666e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9fb666e) fix(core): strip burstObservatory connectivity diagnostic with warning
+- [`c943f3c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c943f3c) fix(core): drop a stateless balancer fallback that Xray cannot start
+- [`ecedb5a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ecedb5a) fix(core): accept provider routing rules without a type
+- [`ddf3488`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ddf3488) fix(core): reject provider proxySettings without a tag
+- [`d735ddb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d735ddb) fix(core): treat a null or empty dialerProxy as no hop
+- [`3100314`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3100314) fix(core): reject string balancer strategies and doubled dialer hops
+- [`ffa7734`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ffa7734) docs: match provider import stages to the sanitizer
+- [`3413dac`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3413dac) test(core): observe routing records in the provider recursion check
+- [`62ac7c9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/62ac7c9) fix(core): classify every Xray rule condition and reject nested chain aliases
+- [`b1a8ac7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b1a8ac7) docs: document provider Xray exit fragment linker architecture
+- [`a0cad1e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a0cad1e) test(core): add unit and real-Xray tests for provider fragments
+- [`670c45f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/670c45f) feat(subs): report omitted provider settings and incompatible config errors
+- [`e008137`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e008137) feat(core): link provider Xray profiles as exit fragments without recursion
+- [`b27b13e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b27b13e) fix(ci): stage geodata in release workflow before core-compat check
+- [`4e14641`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4e14641) fix(core): account for every built case in the core-validation gate
+- [`8acb2a7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8acb2a7) fix(core): generate configs accepted by Xray 26.10 and sing-box 1.14
+- [`0e694ba`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0e694ba) fix(desktop): fail setup on bypass failure and clean legacy route state
+- [`98053b0`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/98053b0) feat(desktop): report Windows tun byte counters from GetIfEntry2
+- [`344984e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/344984e) fix(desktop): strip UTF-8 BOM from powershell and preserve on-link defaults
+- [`39f7370`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/39f7370) fix(desktop): skip routes with unreadable interface metrics and bind uplink by index
+- [`c49539b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c49539b) fix(desktop): select default route via GetIpForwardTable2
+- [`74226f7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/74226f7) fix(desktop): drop stale route-parser test and use then_some
+- [`2cb922e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2cb922e) fix(desktop): take the Windows uplink from one route lookup
+- [`5e51cbd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5e51cbd) fix(desktop): emit UTF-8 from the powershell helper
+- [`4b55708`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4b55708) fix(desktop): read the Windows uplink adapter alias natively
+- [`a592454`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a592454) fix(jobs): preserve failure reason when probe temporary log is blank
+- [`86885f6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/86885f6) fix(core): place the proxy-select alias rule ahead of user rules
+- [`f425a7b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f425a7b) fix(jobs): probe a custom profile through its default path
+- [`e4f8545`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e4f8545) fix(core): hand the proxy tag to the profile's default target
+- [`9f74419`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9f74419) fix(core): drop the balancer fallbackTag xray cannot resolve
+- [`4bdac91`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4bdac91) feat(core): resolve a custom profile's default traffic target
+- [`f33c508`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f33c508) fix(singbox): keep loopback relays reachable under auto_detect_interface
+- [`b20861b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b20861b) fix(jobs): own a test's log slot from start to finish
+- [`a7c8d54`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a7c8d54) fix(jobs): keep the reason a test never started
+- [`0f38e7d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0f38e7d) fix(jobs): run probe cores without the user's routing rules
+- [`d2a9829`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d2a9829) fix(android): bound rule-deletion loop in apply_listener_return
+- [`4ebdf19`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4ebdf19) fix(android): route tun kernel-listener replies back to the tun
+- [`a64ecec`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a64ecec) fix(settings): stack sing-box fragment method setting row to avoid control overflow (#402)
+- [`0892158`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0892158) feat(domain): unify subscription filter regex, url security and block templates in backend (#401)
+- [`991357d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/991357d) fix(desktop): keep custom-protocol out of default features for CI and dev
+- [`8613002`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8613002) fix(desktop): enable custom-protocol feature for embedded frontend assets
+- [`d8933c5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d8933c5) feat(domain): unify asset validation, routing rule parsing and core preset policy in backend (#399)
+- [`e14d241`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e14d241) feat(routes): implement backend route packaging, sharing and package import (#398)
+- [`1783b09`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1783b09) feat(editor): implement backend profile validation and protocol switching (#397)
+- [`2427c5f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2427c5f) feat(lifecycle): implement unified startup readiness check and remove frontend logic leak (#396)
+- [`de886cf`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/de886cf) fix(lifecycle): address review findings for asset presence, negative selectors, and exact matching
+- [`9db4333`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9db4333) fix(frontend): include process, package and source IP in rule summary
+- [`b7e7824`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b7e7824) fix(lifecycle): block startup and require geo assets when used in config
+- [`fb7ee33`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/fb7ee33) fix(copr): instantiate concrete version into spec during make srpm
+- [`deb9dc6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/deb9dc6) fix(copr): avoid macro recursion when parsing spec without explicit version
+- [`9a9eb86`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9a9eb86) fix(copr): address review findings for spec arch, capabilities, and makefile
+- [`e0ec8d1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e0ec8d1) feat(singbox): support dynamic ECH via query_server_name
+- [`38b1767`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/38b1767) fix(frontend): preserve locate target through filter updates before scrolling
+- [`7e74199`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7e74199) fix(frontend): ensure locate scroll executes and centers smoothly
+- [`e4cd98f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e4cd98f) feat(frontend): navigate and scroll to active profile from overview
+- [`6ee1e86`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6ee1e86) fix(core): match static-host names case-insensitively in sing-box DNS
+- [`e197777`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e197777) fix(core): bootstrap sing-box DNS servers through static hosts
+- [`4bea104`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4bea104) docs: say a Linux desktop identifies as Incy desktop too
+- [`21e1feb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/21e1feb) feat(backend): take both desktop HWIDs from happ-sub's rules
+- [`8ecdfaa`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8ecdfaa) feat(core): describe a desktop raw and let happ-sub format it per client
+- [`5e080e3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5e080e3) fix(backend): tune test core configs for the platform
+- [`054f126`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/054f126) fix(log): write each record on one line
+- [`0755112`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0755112) fix(desktop): refuse to start a bridged core that could not be marked
+- [`87995df`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/87995df) feat(core): send Happ desktop's full locale on Linux
+- [`892a72d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/892a72d) fix(desktop): keep a Linux bridged data path across an uplink change
+- [`e1eb8e5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e1eb8e5) feat(core): mark the outbounds a bind would bind
+- [`dc87108`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/dc87108) docs: say a Linux desktop identifies as Happ desktop
+- [`dcf22a5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/dcf22a5) feat(desktop): describe a Linux machine as Happ desktop does
+- [`e43f53d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e43f53d) feat(backend): send the machine id as Happ desktop does on Linux
+- [`ef5dbfd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ef5dbfd) feat(core): send Happ desktop's request from a Linux desktop
+- [`137fbd9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/137fbd9) fix(desktop): describe the real device in subscription requests
+- [`b81796b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b81796b) fix(desktop): open links and watch for resume through the helper too
+- [`01a49ac`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/01a49ac) test(desktop): check that RemotePlatform answers uplink changes as DesktopPlatform
+- [`7609598`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7609598) fix(desktop): ask the local platform whether an uplink change restarts
+- [`006cdb3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/006cdb3) fix(backend): decide on an uplink change under the lifecycle lock
+- [`ddff548`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ddff548) fix(desktop): rebuild only a bridged data path when the uplink changes
+- [`4c5c634`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4c5c634) fix(frontend): let a running core be stopped or restarted while connecting
+- [`2208e33`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2208e33) fix(backend): keep the status when a refresh re-creates the running profile
+- [`785c761`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/785c761) fix(daemon): answer a request it cannot read
+- [`c093d6a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c093d6a) fix(desktop): gate unused log imports on target os
+- [`4995c30`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4995c30) fix(backend): scope kasumi_log import to Windows job submodule
+- [`ae0dff1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ae0dff1) fix(log): append semantics for child logs, recursive field redaction and safe shell lock
+- [`7bd0ce6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7bd0ce6) fix(security): sanitize shell arguments on failure and redact fields in logger
+- [`7ec2b41`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7ec2b41) fix(log): address review feedback on rotation, redaction, filters and i18n
+- [`05e39b5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/05e39b5) fix(frontend): wait for a command as long as the daemon is alive
+- [`d5ab5f4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d5ab5f4) feat(daemon): send a heartbeat on every WebUI connection
+- [`aa2905d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/aa2905d) fix(backend): end every fetch within one budget
+- [`a52af5a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a52af5a) feat(frontend): record what the socket drops, now that it can drop
+- [`2cc08c4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2cc08c4) docs(log): say where the records come from, and correct what the UI is pushed
+- [`2db8b38`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2db8b38) feat(backend): trim logs on a timer and cut them on record boundaries
+- [`79f0ce6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/79f0ce6) feat(daemon): record what the Android data path did, and what it could not run
+- [`6ffd494`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6ffd494) feat(backend): tell "no file" apart from "cannot read it"
+- [`dafc74a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/dafc74a) feat(backend): keep the geo conversion and the core spawn from failing quietly
+- [`8f2934f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8f2934f) feat(backend): say what the data path is doing, and why it stopped
+- [`9a197ac`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9a197ac) test(backend): decide the log fallback off the shared buffer
+- [`21492f8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/21492f8) fix(module): keep the sourced logger visible to shellcheck
+- [`ed2cb4c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ed2cb4c) docs(log): describe the UI's own records
+- [`0ad371b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0ad371b) feat(frontend): record what the UI swallows
+- [`ed92ff0`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ed92ff0) feat(backend): show the in-memory tail when the app log has nothing
+- [`b2ff459`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b2ff459) test(log): keep ad-hoc printing out of the tree
+- [`80dfcaf`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/80dfcaf) feat(module): let the module's own scripts record what they did
+- [`46db930`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/46db930) feat(frontend): offer the app log level next to the core one
+- [`bdba046`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bdba046) feat(state): let the user pick the verbosity of the app's own log
+- [`4390899`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4390899) feat(log): default our own areas to debug, dependencies to info
+- [`5343a44`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5343a44) feat(log): let a noisy dependency be pinned below the level filter
+- [`e83b72a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e83b72a) fix(sub): keep the subscription link out of the fetch failure log
+- [`ff78b83`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ff78b83) feat(log): redact URLs that appear inside error chains
+- [`4aae95c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4aae95c) feat(log): one record format for every Kasumi process
+- [`ca604ee`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ca604ee) fix(frontend): let a closing socket settle only what it owns
+- [`0b951e9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0b951e9) fix(backend): keep the geo flag when stopping the core fails
+- [`cfeac21`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/cfeac21) fix(backend): write geo data and decide the pending restart under one lock
+- [`0424a49`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0424a49) fix(frontend): stop warning that geo updates restart the connection
+- [`6dc3a73`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6dc3a73) fix(backend): mark the restart pending after a manual geo download too
+- [`3d5776c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3d5776c) fix(frontend): tell the user new geo data waits for a restart
+- [`c8ff4f6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c8ff4f6) fix(backend): mark the restart pending when geo data changes
+- [`c26f02c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c26f02c) fix(frontend): drop a pending reconnect once nobody listens
+- [`58526dd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/58526dd) fix(frontend): keep reconnecting the daemon socket until it answers
+- [`db38e74`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/db38e74) fix(android): drop socket marks from Xray configs
+- [`b20ead4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b20ead4) fix(android): respawn a dead uplink monitor no faster than the poll
+- [`0724bf9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0724bf9) fix(android): poll instead of respawning an ip without monitor support
+- [`f6eb628`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f6eb628) fix(android): drop the shell-era RFC1918 rules from the external tun path
+- [`a006ecc`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a006ecc) fix(android): follow Android's default network and drop the mark rule
+- [`0238534`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0238534) fix(android): keep the data path running across an uplink switch
+- [`681781f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/681781f) test(core): check generated Xray rules for a condition in the core sweep
+- [`3630154`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3630154) fix(core): leave out a rule whose domains and IPs all parse to nothing
+- [`09e7a44`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/09e7a44) fix(frontend): ask for a condition before saving a routing rule
+- [`64909ef`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/64909ef) fix(core): leave out Xray rules with no condition
+- [`b8ce38a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b8ce38a) fix(frontend): drop the unverified note from Incy's identity
+- [`d13412b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d13412b) fix(deps): bump happ-sub to a99ec83 for Incy's HWID prefix
+- [`8ad9928`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8ad9928) docs: mention fetching subscriptions as Incy
+- [`9f67b33`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9f67b33) feat(frontend): choose Happ or Incy per subscription
+- [`d075f41`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d075f41) feat(core): fetch a subscription as Incy
+- [`c7820f6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c7820f6) build(deps): bump happ-sub to acd9aef
+- [`9e53846`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9e53846) build(deps): bump happ-sub to c08b41b
+- [`da24259`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/da24259) docs: list incy://crypt1 among the imported links
+- [`c423bd4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c423bd4) feat(frontend): name an Incy subscription after its provider
+- [`77b5fee`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/77b5fee) feat(core): import Incy's incy://crypt1 subscription links
+- [`bc34506`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bc34506) build(deps): bump happ-sub to 7672c07 for incy://crypt1
+- [`b83ebc9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b83ebc9) feat(frontend): warn when a rule's target loses settings on sing-box
+- [`0b7be16`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0b7be16) feat(core): list the xray-only settings sing-box would drop from a profile
+- [`2e41dc3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2e41dc3) fix(frontend): show long hosts in full on a narrow outbound field
+- [`2d03757`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2d03757) fix(frontend): let a long app bar title wrap before it is cut
+- [`0a565ff`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0a565ff) fix(frontend): mark chain hops that clash on core as unavailable
+- [`89126b7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/89126b7) feat(frontend): warn on rules whose target the active core can't build
+- [`4941f96`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4941f96) feat(core): report why a core can't build a rule's target profile
+- [`72b2bb7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/72b2bb7) fix(android): let the phone's IPv6 replies reach tethered clients
+- [`f2711af`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f2711af) fix(core): refuse custom Xray configs that skip the certificate check
+- [`b1da215`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b1da215) fix(desktop): drop the old engine marker at boot
+- [`582a957`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/582a957) fix(desktop): stop the tun helper gracefully
+- [`cef618e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/cef618e) fix(desktop): sweep sing-box's IPv6 auto_route rules after an unclean exit
+- [`bec6204`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bec6204) fix(android): stop tun helpers gracefully and sweep their orphaned rules
+- [`d9cb44b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d9cb44b) feat(backend): find the sing-box tun rules a killed helper leaves behind
+- [`06e3d1d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/06e3d1d) fix(backend): report the ports the running data path listens on
+- [`ef820de`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ef820de) feat(core): record the ports a data path listens on
+- [`e4e87c3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e4e87c3) fix(android): route the app filter the plan was resolved with
+- [`d813816`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d813816) fix(core): ask for a restart when the routing in front of a helper changes
+- [`f96d946`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f96d946) fix(android): watch the force-proxy tun's helper too
+- [`59cf2a7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/59cf2a7) test(desktop): start and the watchdog expect the same helper
+- [`e30004c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e30004c) feat(desktop): send the data-path plan to the privileged helper
+- [`ad531f8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ad531f8) test(android): start and the watchdog expect the same helpers
+- [`e6c0b99`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e6c0b99) test(backend): the platform starts from the baseline's plan
+- [`b614160`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b614160) test(core): plan, config and state agree for every combination
+- [`20ad9dc`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/20ad9dc) feat(core): add the data-path plan
+- [`839a39e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/839a39e) feat(core): record the helpers a data path runs
+- [`10a3e40`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/10a3e40) fix(android): bridge the force-proxy tun into the force inbound's port
+- [`993624b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/993624b) fix(android): bring up the sing-box sidecar for an xray core
+- [`6cc9fae`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6cc9fae) feat(core): export the defaults a new subscription starts with
+- [`f5f03c9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f5f03c9) feat(frontend): open the profile editor on a link pasted in the Add sheet
+- [`e5e3b87`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e5e3b87) fix(frontend): carry the Add sheet's options into the subscription editor
+- [`9ab1db0`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9ab1db0) fix(frontend): let a sheet dismissed while sliding in finish closing
+- [`bec5f0c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bec5f0c) fix(frontend): open the subscription editor with the URL typed in the Add sheet
+- [`d201570`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d201570) fix(core): don't offer a routing profile that carries no rules
+- [`7a7c45f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7a7c45f) fix(android): refuse tethered clients' IPv6 DNS to the phone
+- [`396d93f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/396d93f) fix(android): pin tethered traffic ahead of the BPF offload programs
+- [`a25bdae`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a25bdae) test(desktop): drive the helper pipe loop from two GUIs
+- [`790aaa6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/790aaa6) fix(desktop): serve only the Windows session that started the service
+- [`c848c1a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c848c1a) feat(desktop): add the session rule for the helper service
+- [`ec77c84`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ec77c84) feat(frontend): name rule and route targets apart, and flag deleted ones
+- [`32e0c5f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/32e0c5f) feat(frontend): pick a profile from a searchable full-height sheet
+- [`28b2bf4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/28b2bf4) feat(frontend): name profiles apart where they are referenced
+- [`63f0a12`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/63f0a12) fix(backend): sweep retained test logs when profiles are dropped and on start
+- [`d5f719f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d5f719f) fix(daemon): make the status CLI report the running daemon's state
+- [`5cd572b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5cd572b) fix(backend): answer a Status request with the probe-refined state
+- [`a22d73f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a22d73f) fix(frontend): lay out subscription cards the same way at any width
+- [`f390414`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f390414) fix(frontend): show subscription traffic in the UI font and locale
+- [`74dc480`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/74dc480) fix(frontend): give app bar subtitles their own full-width row
+- [`97431f9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/97431f9) fix(scripts): resolve the release zip path before entering module/
+- [`93af940`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/93af940) test(desktop): cover the Windows DNS guard and its lack of persistent state
+- [`b6ab865`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b6ab865) fix(desktop): block DNS outside the Windows tun while the helper lives
+- [`9193c85`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9193c85) fix(desktop): give the Windows tun its own resolver with an xray core
+- [`e2163fe`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e2163fe) feat(core): add the resolver address a Windows tun advertises
+- [`89c5d64`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/89c5d64) fix(desktop): link the app manifest into Windows test binaries
+- [`f63098d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f63098d) feat(frontend): explain a core forced or blocked by a chain hop
+- [`75135e3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/75135e3) feat(backend): report the hop that pins a profile's core
+- [`f790c2f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f790c2f) fix(core): run a proxy chain on the core its hops need
+- [`513798f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/513798f) test(desktop): refuse a pre-handshake helper over a real socket
+- [`d237fe9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d237fe9) feat(frontend): explain an outdated helper on startup
+- [`6c5daf8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6c5daf8) feat(desktop): report an outdated helper to the UI
+- [`14b7524`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/14b7524) feat(desktop): version the privileged helper handshake
+- [`8664982`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/8664982) fix(frontend): mark catch-all rules from the backend's answer
+- [`d6b8399`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d6b8399) feat(backend): answer which routing rules catch everything
+- [`f7deb46`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f7deb46) feat(core): tell whether a built rule matches every connection
+- [`5feb05a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5feb05a) feat(desktop): pin the IPv6 uplink source for sing-box
+- [`9f34f88`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9f34f88) feat(frontend): hide protocols the device can't run in the editor
+- [`a234f46`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a234f46) fix(backend): withhold protocols the device can't run
+- [`60382a8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/60382a8) test(core): check a share-link corpus against the real cores
+- [`a726786`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a726786) feat(frontend): say why an insecure profile can't start
+- [`03e64d6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/03e64d6) fix(core): run unpinned insecure TLS on sing-box, refuse it on xray
+- [`bbc7afd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bbc7afd) fix(core): leave the removed trojan flow out of xray configs
+- [`b136e55`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b136e55) feat(frontend): pin a profile to the default route in the editor
+- [`25a42d5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/25a42d5) feat(core): let the default route pin a profile against its group
+- [`9f3b13e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/9f3b13e) feat(frontend): show a local port clash in Settings
+- [`fdd61e5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/fdd61e5) fix(backend): refuse a settings write that makes ports collide
+- [`b2096a2`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b2096a2) fix(core): detect local listeners set to one port
+- [`23dccc7`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/23dccc7) fix(frontend): say that a backup merge skips what is already here
+- [`a5e8cff`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a5e8cff) fix(core): skip backup items already here when merging
+- [`3772a41`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3772a41) fix(frontend): say that TCP ping targets a chain's first hop
+- [`4577726`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4577726) fix(desktop): tcp-ping over the uplink while a tun is up
+- [`4607b72`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4607b72) fix(backend): tcp-ping the chain hop the device dials
+- [`1649ce5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1649ce5) fix(backend): start the tun engine with the baseline's tuning
+- [`764bbfd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/764bbfd) fix(core): count external tun tuning as a core config change
+- [`77904dd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/77904dd) test(android): cover the xtables.lock detection and retry decision
+- [`cb3f699`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/cb3f699) test(backend): cover job-object reaping on Windows
+- [`fe39d53`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/fe39d53) fix(android): retry a sing-box start that lost the xtables.lock race
+- [`67dac2a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/67dac2a) fix(backend): reap Windows children with a kill-on-close job object
+- [`a320ee6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a320ee6) fix(backend): bound the in-memory subscription cookie jar
+- [`089e5e9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/089e5e9) style(desktop): collapse the nested if in the service uninstall
+- [`732ccd8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/732ccd8) feat(frontend): say what a routing link imported as a route does
+- [`780a6cd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/780a6cd) fix(frontend): count only real share links in the mock bridge
+- [`a62643e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a62643e) fix(frontend): name a typed happ:// subscription after what it resolves to
+- [`f582966`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f582966) fix(frontend): tell links from broken JSON in the backup and rule imports
+- [`d5ddf6b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/d5ddf6b) fix(backend): write subscription request headers in title case
+- [`5d4e072`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5d4e072) fix(frontend): send subscription edits with the copy they started from
+- [`a5bfd08`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a5bfd08) fix(core): apply only the settings a subscription edit changed
+- [`bfb2d48`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bfb2d48) fix(core): keep fetch results when a subscription is saved
+- [`bed47bd`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bed47bd) feat(core): add a SetSubError intent for failures the UI detects
+- [`55f5940`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/55f5940) feat(frontend): take happ://routing links in the route import sheet
+- [`5093dcb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5093dcb) feat(core): import a Happ routing profile as a route of its own
+- [`6e59a60`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6e59a60) fix(core): let every Shadowsocks cipher run on Xray on plain TCP
+- [`b3d1b93`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b3d1b93) test(core): validate Xray cipher spellings on both pinned cores
+- [`5818860`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5818860) fix(core): let Xray-spelled Shadowsocks ciphers run on sing-box
+- [`a8de778`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a8de778) test(backend): make the port-lease test independent of other processes
+- [`fb13b80`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/fb13b80) fix(frontend): say how many backup profiles were left out
+- [`00276b2`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/00276b2) feat(backend): count skipped profiles when restoring a backup
+- [`2003c3d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2003c3d) fix(backend): read app-state.json through the migrations everywhere
+- [`33e42b5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/33e42b5) fix(desktop): generate enum-keyed maps as partial Zod records
+- [`e85f6e0`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e85f6e0) fix(frontend): keep the mock bridge from restoring unmigrated profiles
+- [`72d3e62`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/72d3e62) fix(frontend): let a backup's older profiles reach the migrations
+- [`381ea93`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/381ea93) test(core): restore a backup that still has flat v0 profiles
+- [`f7b8173`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f7b8173) fix(backend): stamp the current schema version on every state write
+- [`815cc89`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/815cc89) test(core): pin a sing-box tailscale endpoint as a skipped server
+- [`3a9b2a9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3a9b2a9) fix(frontend): say which sing-box outbounds the warning counts
+- [`991ed48`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/991ed48) fix(core): warn only about sing-box servers that can't be imported
+- [`c070516`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c070516) feat(backend): offer HTTP/2 to subscription servers over ALPN
+- [`84f5d17`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/84f5d17) fix(core): keep the REALITY pick of an active provider config
+- [`c0511c8`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c0511c8) fix(core): bind xray dns outbounds to the uplink in bridged mode
+- [`a7d89ee`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a7d89ee) test(core): validate bridged uplink binds against the real cores
+- [`46b68b3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/46b68b3) fix(core): bind every server outbound to the uplink in bridged mode
+- [`b573365`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b573365) fix(frontend): confirm withdrawing provider configs and remove them
+- [`a3a1222`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a3a1222) fix(core): drop provider configs when their permission is withdrawn
+- [`6d3f6fe`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/6d3f6fe) fix(backend): name the profile an on-demand probe measured
+- [`ad75b5a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ad75b5a) fix(backend): report a ping only for the profile it measured
+- [`3208db3`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3208db3) test(backend): make the failed tcp_ping probe network-independent
+- [`eddf3bb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/eddf3bb) fix(frontend): start new VLESS, VMess and HTTP profiles without TLS
+- [`790837e`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/790837e) fix(core): run Shadowsocks over QUIC only on a core that supports it
+- [`4bef647`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4bef647) fix(frontend): refuse a newer-schema backup before stopping the service
+- [`b9857dc`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b9857dc) feat(frontend): stamp the schema version on exported backups
+- [`5442208`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5442208) fix(core): migrate imported backups like stored state
+- [`30b0cea`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/30b0cea) fix(frontend): read happ:// links in the subscription URL field
+- [`a673611`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a673611) fix(core): switch off TLS on stored plain Shadowsocks profiles
+- [`cac8269`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/cac8269) fix(frontend): keep TLS off when the editor switches to Shadowsocks
+- [`e433c74`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e433c74) fix(core): keep plain Shadowsocks links without TLS
+- [`835208d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/835208d) docs: describe the Happ support in one place
+- [`1dc5204`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1dc5204) feat(frontend): show encrypted subscription links with a Reveal action
+- [`b243f70`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b243f70) feat(frontend): read happ:// links in the add sheet
+- [`0d16f3f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0d16f3f) feat(frontend): add resolveImportInput and revealSubscriptionUrl
+- [`1378abc`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/1378abc) feat(backend): add ResolveImportInput and RevealSubscriptionUrl
+- [`c916853`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c916853) feat(backend): decrypt encrypted subscription links at fetch time
+- [`918c41a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/918c41a) feat(frontend): explain an encrypted link that does not decrypt
+- [`72cf9a6`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/72cf9a6) feat(core): resolve happ:// links and encrypted subscription URLs
+- [`561972a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/561972a) build(deps): enable happ-sub URL decryption with the built-in keys
+- [`2913599`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2913599) docs: mention JSON subscription bodies
+- [`26410a4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/26410a4) feat(frontend): review provider JSON configs and mark them in the list
+- [`7a7b89d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/7a7b89d) feat(backend): ask before importing a provider's Xray configs
+- [`c1aed0f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c1aed0f) feat(core): decompose sing-box subscription bodies into typed profiles
+- [`5ebf94b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5ebf94b) feat(core): import Xray JSON subscription bodies after consent
+- [`b8121de`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b8121de) feat(core): keep provider Custom profiles across refreshes
+- [`db96084`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/db96084) feat(frontend): show the tethering offload warning under its switch
+- [`a328257`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/a328257) feat(android): warn while tethering offload still bypasses the proxy
+- [`ab6ddad`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ab6ddad) fix(android): reinstall tether routes after the downstream is recreated
+- [`df51e2a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/df51e2a) fix(android): hold off tethering offload while tethered traffic is proxied
+- [`bad08bb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bad08bb) fix(android): detect tethering downstreams from Android's own rules
+- [`48e875d`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/48e875d) feat(android): proxy hotspot and tethering clients
+- [`593ca0a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/593ca0a) docs: mention the review of provider-proposed changes
+- [`c97a817`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c97a817) feat(frontend): review provider-proposed changes per subscription
+- [`b48860b`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b48860b) feat(backend): offer provider changes on fetch, use accepted fallback
+- [`f9391e4`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/f9391e4) feat(backend): honour accepted provider User-Agent keys
+- [`b4343f1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/b4343f1) feat(core): propose provider changes and apply them only on consent
+- [`5428871`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/5428871) docs: mention the Happ-style request identity
+- [`0fa7c2c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0fa7c2c) feat(frontend): edit the request identity per subscription and in Settings
+- [`3aa1415`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3aa1415) feat(frontend): add resolveRequestIdentity to the bridge
+- [`3f70245`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/3f70245) feat(desktop): report device facts and the machine id
+- [`c3c9077`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c3c9077) feat(daemon): read the Android SSAID key and device facts
+- [`98bf9d1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/98bf9d1) feat(backend): send Happ's request identity on subscription fetches
+- [`cbb5e32`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/cbb5e32) feat(core): resolve the subscription request identity via happ-sub
+- [`2bdbad1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2bdbad1) docs: mention Happ-compatible subscriptions
+- [`e8ad245`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/e8ad245) feat(frontend): show provider info on subscription cards
+- [`0948c75`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/0948c75) fix(core): keep REALITY sni/sid of the active profile across refreshes
+- [`39264bc`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/39264bc) feat(backend): open provider links
+- [`ba575d5`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ba575d5) feat(backend): apply provider meta on subscription updates
+- [`c42f7cb`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/c42f7cb) feat(core): migrate state to v2
+- [`88de447`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/88de447) feat(core): provider info and schedule from subscription meta
+- [`489f6ca`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/489f6ca) build(deps): bump happ-sub to 62642b3
+- [`15b4988`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/15b4988) feat(frontend): show provider Custom profiles read-only
+- [`38d6bf9`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/38d6bf9) feat(core): build provider configs into Kasumi's skeleton
+- [`4199c5a`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4199c5a) feat(core): sanitise provider Xray configs
+- [`ec40142`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/ec40142) feat(core): mark Custom profiles by origin
+- [`4448778`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/4448778) feat(backend): route subscriptions through happ-sub
+- [`934671c`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/934671c) feat(backend): return status and headers from net::fetch
+- [`2890dae`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/2890dae) feat(core): ingest subscription responses through happ-sub
+- [`bdbbbc1`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/bdbbbc1) fix(core): drop Happ serverDescription from share-link names
+- [`afeeb9f`](https://github.com/loss-and-quick/Kasumi-Proxy/commit/afeeb9f) fix(core): parse bare IPv6 hosts in share links
+
 ## v0.4.8 — 2026-10-12
 
 ### Core updates
