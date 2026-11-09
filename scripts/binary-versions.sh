@@ -4,7 +4,7 @@
 # (the release workflow passes the upstream latest when bumping). release.yml/
 # nightly.yml grep these defaults to detect upstream updates — keep the
 # `NAME="${NAME:-vX}"` shape.
-XRAY_VERSION="${XRAY_VERSION:-v26.10.31}"
+XRAY_VERSION="${XRAY_VERSION:-v26.11.9}"
 TUN2SOCKS_VERSION="${TUN2SOCKS_VERSION:-v2.7.0}"
 # Alternative TUN engine (heiher/hev-socks5-tunnel). Selectable per core in
 # Settings; pairs with a socks-only core. Tags have no leading 'v'.
